@@ -1,0 +1,56 @@
+dataset:
+  edge_encoder: true
+  edge_encoder_bn: false
+  edge_encoder_name: COCOMaskedEdge
+  format: PyG-COCOSuperpixels
+  name: edge_wt_region_boundary
+  node_encoder: true
+  node_encoder_bn: false
+  node_encoder_name: COCOMaskedNode
+  slic_compactness: 30
+  task: graph
+  task_type: classification
+  transductive: false
+gnn:
+  act: gelu
+  batchnorm: false
+  dim_inner: 200
+  dropout: 0.1
+  head: inductive_masked_node
+  layer_type: gcnconv
+  layers_mp: 14
+  layers_post_mp: 1
+  layers_pre_mp: 0
+  residual: true
+metric_best: f1
+model:
+  loss_fun: weighted_cross_entropy
+  type: custom_gnn
+optim:
+  base_lr: 0.001
+  max_epoch: 200
+  num_warmup_epochs: 10
+  optimizer: adamW
+  scheduler: cosine_with_warmup
+  weight_decay: 0.0
+out_dir: results
+share:
+  dim_in: 14
+  dim_out: 81
+  num_splits: 3
+train:
+  batch_size: 256
+  ckpt_period: 100
+  eval_period: 1
+  mode: custom
+hsg:
+  use_edge_onehot: true
+  use_node_onehot: true
+  num_hierarchy_nodes:
+  - 0.05
+  - -1
+wandb:
+  # entity: insert_name
+  name: coco_gcn
+  project: hsg
+  use: true
