@@ -3,6 +3,9 @@
 
 <!-- ![GraphGPS-viz](./GraphGPS.png) -->
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/next-level-message-passing-with-hierarchical/graph-regression-on-peptides-struct)](https://paperswithcode.com/sota/graph-regression-on-peptides-struct?p=next-level-message-passing-with-hierarchical)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/next-level-message-passing-with-hierarchical/node-classification-on-pascalvoc-sp-1)](https://paperswithcode.com/sota/node-classification-on-pascalvoc-sp-1?p=next-level-message-passing-with-hierarchical)
+
 This is the repository of the paper [Next Level Message-Passing with Hierarchical Support Graphs]().
 The code is based on the [GraphGPS repository](https://github.com/rampasek/GraphGPS).
 
